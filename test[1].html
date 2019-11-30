@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Plagiarism Checker</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <style>
+        #choose_file, #choose_text{
+            padding-top: 50px;
+        }
+
+        .none {
+            display: none;
+        }
+
+        .showDIV {
+            display: block;
+        }
+
+        .container{
+            width: 59.4%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        #btn{
+            float: right;
+        }
+    </style>
+    <script>
+        function showFile() {
+            $("#choose_file").removeClass("none");
+            $("#choose_file").addClass("showDIV");
+            $("#choose_text").removeClass("showDIV");
+            $("#choose_text").addClass("none");
+        }
+
+        function showText() {
+            $("#choose_text").removeClass("none");
+            $("#choose_text").addClass("showDIV");
+            $("#choose_file").removeClass("showDIV");
+            $("#choose_file").addClass("none");
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <div class="container">
+            <h2 style="margin-left: 30%;">Plagiarism Checker</h2>
+            <h3>How do you want to check Plagiarism?</h3>
+            <input type="radio" name='thing' value='valuable' id="bank" onclick="showFile()" />
+            <label>By Choosing File</label>
+            <input type="radio" name='thing' value='valuable' id="school" onclick="showText()" />
+            <label>By Writing Text</label>
+        </div>
+    </div>
+    <div id="choose_file" class="none">
+        <div class="container">
+            <form>
+                <input type="file" name="file_1" value="File 1">
+                <input type="file" name="file_2" value="File 2">
+                <input type="button" name="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+    <div id="choose_text" class="none">
+        <div class="container">
+            <form>
+                <textarea style="resize: none; outline: none;" rows="10" cols="50" name="text_1" placeholder="Enter text here"></textarea>
+                <textarea style="margin-left: 50px; resize: none; outline: none;" rows="10" cols="50" name="text_2" placeholder="Enter text here"></textarea><br>
+                <input id="btn" type="button" name="submit" value="Submit">
+            </form>
+        </div>
+        
+    </div>
+    <div>
+        <div class="container">
+            <h2>Result:</h2>
+            <textarea style="resize: none; outline: none;" rows="10" cols="50" name="copytext_1" placeholder="Copied text"></textarea>
+            <textarea style="margin-left: 50px; resize: none; outline: none;" rows="10" cols="50" name="copytext_2" placeholder="Copied text"></textarea>
+        </div>
+        
+    </div>
+
+</body>
+
+</html>
